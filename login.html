@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<!--<base href="http://www.cmems.cn:86/jfkj/">-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<title>登录--背景渐变</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/base.css" type="text/css">
+		<link rel="stylesheet" href="css/login.css" type="text/css">
+		<script src="js/res/jquery/jquery1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/bgstretcher.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/javascript/login.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+			#tips{
+				display:none;
+				margin-left: 10%;
+				margin-right: 10%;
+		    	-moz-box-shadow: 3px 3px 4px #333232;
+		    	-webkit-box-shadow: 3px 3px 4px #333232;
+		    	box-shadow: 3px 3px 4px #333232;
+			    /* For IE 8 */
+			    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#333232)";
+			    /* For IE 5.5 - 7 */
+			    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#333232');
+			}
+			a{
+				color: orange;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				init();
+				$(window).resize();
+				if (navigator.userAgent.indexOf("MSIE") > 0) {
+					$("#tips").css("display","block");
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="loginwrap">
+			<div class="login">
+				<dl style="margin-top: 24.6667px;">
+					<dt>
+					<img src="images/logo.png">
+				</dt>
+					<dd>
+						<input id="username" type="text" class="textext" value="admin"><span id="usernamespan"></span>
+					</dd>
+					<dd>
+						<input id="password" type="password" class="keytext" value="century1234"><span id="passwordspan"></span>
+					</dd>
+					<dd></dd>
+					<dd>
+						<input id="login" type="button" value="登 录" class="logbtns">
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 浏览器提示 -->
+		<div id="tips">
+			<div style="text-align: center;color: orange;font-size: 18px">
+				浏览器检测提示
+			</div>
+			<div style="font-size: 15px;margin-top: 20px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;抱歉！<b style="color: orange;">能源系统</b>不能完全支持您的浏览器。<b style="color: orange;">能源系统</b>中使用业界最新的技术，而您所用的浏览器版本过旧，建议您使用下面的浏览器进行体验。
+				<table style="margin-top: 20px">
+					<tbody>
+						<tr>
+							<td width="8%">
+								<img title="chrome浏览器" src="images/131.png" width="54" height="54" alt="chrome浏览器">
+							</td>
+							<td width="12%">
+								<a title="谷歌浏览器" href="http://dlsw.baidu.com/sw-search-sp/soft/9d/14744/ChromeStandaloneSetup.1415762079.exe">谷歌浏览器</a>
+							</td>
+							<td>
+								谷歌浏览器（Chrome）是一个由Google（谷歌）公司开发的开放原始码网页浏览器。该浏览器是基于其他开放原始码软件所撰写，包括WebKit和Mozilla，目标是提升稳定性、速度和安全性，并创造出简单且有效率的使用者界面。
+							</td>
+						</tr>
+						<tr style="margin-top: 10px;">
+							<td width="8%">
+								<img title="搜狗浏览器" src="images/133.png" width="54" height="54" alt="搜狗浏览器">
+							</td>
+							<td width="12%">
+								<a title="搜狗浏览器" href="http://dlsw.baidu.com/sw-search-sp/soft/0d/14754/sogou_explorer_V5.1.7.15210.1417401390.exe">搜狗浏览器</a>
+							</td>
+							<td>
+								搜狗（sougou）高速浏览器是国内最早发布的双核浏览器。完美融合全球最快的Webkit内核和兼容性最佳的IE内核，保证良好兼容性的同时极大提升网页浏览速度。首创双核引擎，5级加速体系，兼容双核的应用平台，个性化的皮肤体系以及先进的安全组件，搜狗为用户打造了快速，便捷，个性，安全的上网体验，是千万用户高速上网的必备工具。享受网络，就用搜狗浏览器。
+							</td>
+						</tr>
+						<tr style="margin-top: 10px;">
+							<td width="8%">
+								<img title="火狐浏览器" src="images/132.png" width="54" height="54" alt="火狐浏览器">
+							</td>
+							<td width="12%">
+								<a title="火狐浏览器" href="http://dlsw.baidu.com/sw-search-sp/soft/51/11843/Firefox_V33.1.1.5430_setup.1416195513.exe"> 火狐浏览器</a>
+							</td>
+							<td>
+								Mozilla Firefox，中文名通常称为“火狐”，是一个开源网页浏览器，使用Gecko引擎（即非ie内核），可以在多种操作系统如Windows，Mac和linux上运行。Firefox由Mozilla基金会与数百个志愿者所开发，原名“Phoenix”（凤凰），之后改名“Mozilla Firebird”（火鸟），再改为现在的名字。2012年8月，在世界范围内，Firefox占据着23%的使用份额。
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<!-- 退出个人信息束 -->
+
+		<!--<div id="bgstretcher" class="bgstretcher" style="width: 1920px; height: 362px;">
+			<ul>
+				<li class="" style="display: none;"><img src="images/bg1.jpg" alt="" style="width: 1920px; height: 537px;"></li>
+				<li class="" style="display: list-item; opacity: 0.995858;"><img src="images/bg2.jpg" alt="" style="width: 1920px; height: 537px;"></li>
+				<li style="display: list-item; opacity: 0.00414197;" class="bgs-current"><img src="images/bg3.jpg" alt="" style="width: 1920px; height: 537px;"></li>
+			</ul>
+		</div>-->
+	</body>
+
+</html>

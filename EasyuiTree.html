@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>EasyuiTree</title>
+		<link rel="stylesheet" type="text/css" href="js/res/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="js/res/jquery-easyui-1.4.4/themes/metro/tree.css" />
+		<script src="js/res/jquery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/jquery-easyui-1.4.4/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+								$('#TreeDemo').tree({
+											url: '/WebProject/js/res/json/tree.json',
+											method:'get',
+											animate: true,
+										});
+				var $tree_data;
+				$.ajax({
+					type: "get",
+					url: "/WebProject/js/res/json/tree.json",
+					async: false,
+					success: function(data) {
+						$tree_data = data;
+						console.log($tree_data.length);
+						var html = '';
+						$($tree_data).each(function() {
+							//加载章节
+							html += "<li >";
+						
+								html += '<div id="' + $tree_data.id + '" class="tree-node"><span class="tree-indent"></span><span class="tree-icon tree-file "></span><span class="tree-title">' + $tree_data.text + '</span></div>';
+							
+							html += "</li>";
+						});
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<ul id="TreeDemo" class="tree"></ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

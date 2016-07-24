@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" type="text/css" href="js/res/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="js/res/font-awesome-4.4.0/css/font-awesome.min.css"/>
+		<script src="js/res/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/validate/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/res/javascript/Cascade.js" ></script>
+		<script type="text/javascript" src="js/res/javascript/common.js"></script>
+		<script src="js/res/javascript/register.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/**start input style**/
+			
+			.input-g-line {
+				vertical-align: central;
+				height: 35px;
+				line-height: 35px;
+				padding: 3px 0px;
+				margin: 5px 0px;
+			}
+			.input-g-title {
+				display: inline-block;
+				float: left;
+				height: 34px;
+				line-height: 34px;
+				width: 100px;
+				padding-top: 1px;
+				font-size: 18px;
+			}
+			.input-g {
+				display: table;
+				position: relative;
+				height: 25px;
+				line-height: 25px;
+				float: left;
+				width: 380px;
+				margin-top: 5px;
+			}
+			.input-g-icon {
+				background-color: #2C9FB3;
+				border: 1px solid #2C9FB3;
+				border-radius: 4px;
+				color: #FFFFFF;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 22px;
+				padding: 6px 12px;
+				text-align: center;
+				height: 22px;
+				border-bottom-right-radius: 0px;
+				border-top-right-radius: 0px;
+				vertical-align: middle;
+				white-space: nowrap;
+				width: 1%;
+				display: table-cell;
+				margin-right: 0px;
+			}
+			.input-g-icon i {
+				width: 16px;
+			}
+			.input-g .input-g-text {
+				display: table-cell;
+				width: 350px;
+				background-color: #fff;
+				background-image: none;
+				border: 1px solid #2C9FB3;
+				border-radius: 0px 4px 4px 0px;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+				color: #555;
+				display: block;
+				font-size: 14px;
+				height: auto;
+				line-height: 1.42857;
+				padding: 6px 12px;
+				transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+			}
+			.input-g .input-g-text-m {
+				display: table-cell;
+				width: 350px;
+				background-color: #fff;
+				background-image: none;
+				border: 1px solid #2c9fb3;
+				border-radius: 0px 4px 4px 0px;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+				color: #555;
+				display: block;
+				font-size: 14px;
+				height: 234px;
+				line-height: 1.42857;
+				padding: 6px 12px;
+				transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+			}
+			.input-g .status {
+				display: table-cell;
+				width: 150px;
+			}
+			.input-g select {
+				height: 30px;
+				line-height: 30px;
+				float: left;
+				border-radius: 0px 4px 4px 0px;
+				width: 117px;
+			}
+			/**end input style**/
+			/***VAlid****/
+			
+			span.status {
+				text-align: left;
+				vertical-align: top;
+				white-space: nowrap;
+				width: 246px;
+				display: inline-block;
+			}
+			span.status label.error {
+				background: url("img/uncheck.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+				color: #dd676a;
+				text-align: left;
+				vertical-align: middle;
+				padding-left: 16px;
+				font-size: 12pt;
+				height: 16px;
+				line-height: 16px;
+			}
+			span.status label.checked {
+				background: url("img/checked.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+			}
+			.Linkage {
+				position: relative;
+			}
+			.Linkage .status {				
+				position: absolute;
+				left: 375px;
+				top: 0;
+			}
+			.validation-summary-errors ul li {
+				color: #dd676a;
+				text-align: left;
+				vertical-align: middle;
+				padding-left: 16px;
+				font-size: 12pt;
+				height: 16px;
+				line-height: 16px;
+			}
+			/***end  VAlid****/
+		</style>
+		    <script>
+    //$(function() {
+    //    $("#Province").change(function() {
+    //        $("#District").valid();
+    //    });
+    //    $("#City").change(function() {
+    //        $("#District").valid();
+    //    });
+    //})
+    </script>
+
+	</head>
+
+	<body>
+		<form id="register_form" class="register_form" method="post">
+			<div class="input-g-line">
+				<span class="input-g-title">用户名</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="text" id="realName" name="realName" placeholder="请输入用户名" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">密码</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="password" id="realPass" name="realPass" placeholder="请输入密码" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">确认密码</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="password" id="realPass2" name="realPass2" placeholder="请再次输入密码" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">区域</span>
+				<div id="Region" class="input-g Linkage">
+					<span class="input-g-icon"></span>
+					<select id="Province" name="Province">
+						<option value="请选择省份">请选择省份</option>
+					</select>
+					<select id="City" name="City">
+						<option value="请选择城市">请选择城市</option>
+					</select>
+					<select id="District" name="District">
+						<option value="请选择地区">请选择地区</option>
+					</select><span class="status"></span>
+				</div>				
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">电话</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="text" id="Phone" name="Phone" placeholder="请填写手机号码" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">邮箱</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="text" id="Email" name="Email" placeholder="请填写邮箱" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g">
+				<a class="btn btn-success" id="register_btn">注册</a>
+			</div>
+			<div class="clear"></div>
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,68 @@
+* {
+margin: 0;
+padding: 0;
+}
+.medium {
+font-size: 16px;
+color: #000;
+height: 38px;
+line-height: 38px;
+font-family: "Microsoft Yahei","宋体", Arial, Helvetica, sans-serif;
+}
+
+.fl {
+display: inline;
+float: left;
+}
+
+.medium span {
+padding-right: 15px;
+}
+.selectStyleTwo .select_box {
+width: 125px;
+height: 38px;
+background: url(../images/tab-bj02.jpg) no-repeat;
+font-family: "Microsoft Yahei","宋体", Arial, Helvetica, sans-serif;
+font-size: 16px;
+color: #333;
+}
+
+.selectStyleTwo div.tag_select_open {
+display: block;
+color: #414141;
+width: 105px;
+height: 38px;
+padding: 0 10px;
+line-height: 38px;
+}
+
+.selectStyleTwo ul.tag_options {
+position: absolute;
+margin: 0;
+padding: 0 0 1px;
+margin-top: -1px;
+width: 123px;
+border: 1px solid #787878;
+border-top: 1px solid #787878;
+background: #fff;
+overflow: hidden;
+}
+
+.selectStyleTwo ul.tag_options li {
+display: block;
+width: 103px;
+padding: 0 10px;
+height: 38px;
+text-decoration: none;
+line-height: 38px;
+color: #666;
+}
+.selectStyle ul.tag_options li.open_selected {
+color: #428cc4;
+background: #f9f9f9;
+}
+
+.selectStyle ul.tag_options li.open_hover {
+color: #428cc4;
+background: #f0f8ff;
+}

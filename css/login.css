@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* ==========================================================
+	* Name: 全站默认样式
+	* User: iiven
+============================================================*/
+
+.bgstretcher{
+    position:fixed!important;
+    z-index:-1;
+    background:black;
+    overflow:hidden;
+    width:100%;
+}
+.bgstretcher,.bgstretcher ul,.bgstretcher ul li {
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+.bgstretcher ul,.bgstretcher ul li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+
+.login {
+    margin: 0 auto;
+    width: 380px;
+}
+
+.login dt{
+    width: 380px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    background: url(../images/logobdr.png) no-repeat bottom center;
+    text-align: center;
+}
+.login dd{
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 264px;
+}
+
+.textext,
+.keytext,
+.logbtns{
+    width: 264px;
+    height: 44px;
+    border: none;
+    background: url(../images/formsbg.png) no-repeat;
+    font-size: 14px;
+    line-height: 44px;
+}
+.textext,
+.keytext{
+    width: 200;
+    padding: 0 10px 0 54px;
+    color: #999;
+}
+.keytext{background-position: 0 -44px;}
+
+.logbtns{
+    background-position: 0 -88px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+.logbtns:hover{background-position: 0 -132px;}

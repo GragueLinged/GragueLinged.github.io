@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>快捷选时</title>
+		<style type="text/css">
+		
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				font-size: 13px;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			#divselect {
+				width: 186px;
+				margin: 0px 10px;
+				position: relative;
+				z-index: 10000;
+			}
+			
+			#divselect cite {
+				width: 150px;
+				height: 24px;
+				line-height: 24px;
+				display: block;
+				color: #807a62;
+				cursor: pointer;
+				font-style: normal;
+				padding-left: 4px;
+				padding-right: 30px;
+				border: 1px solid #333333;
+				background: url('img/xjt.png') no-repeat right center;
+			}
+			
+			#divselect ul {
+				width: 150px;
+				border: 1px solid #333333;
+				background-color: #ffffff;
+				position: absolute;
+				z-index: 20000;
+				margin-top: -1px;
+				display: none;
+			}
+			
+			#divselect ul li {
+				height: 24px;
+				line-height: 24px;
+			}
+			
+			#divselect ul li a {
+				display: block;
+				height: 24px;
+				color: #333333;
+				text-decoration: none;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+			#divselect ul li a:hover {
+				background-color: #CCC;
+			}
+			
+			.md_left,
+			.md_right {
+				float: left;
+			}
+			.md{
+				margin-top: 20px;
+				
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="js/res/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+		<!--<script src="js/res/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/res/jquery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/My97DatePicker/WdatePicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/javascript/divselect.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.divselect("#divselect", "#inputselect");
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12 md">
+					<form action="" method="post">
+					<div class="md_left">
+						<span class="fl">起始日期</span>
+						<span id="StartDate" class="fl ccccc selectStyle selectStyleTwo">
+            	<input type="text" value="2016-01-12" id="StartDate1" style="width: 114px;" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+            </span>
+						<span class="fl">结束日期</span>
+						<span id="EndDate" class="fl ccccc selectStyle selectStyleTwo">
+                  <input type="text" value="2016-01-12" id="EndDate1" style="width: 114px;" class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+            </span>
+					</div>
+					<div id="divselect" class="md_right">
+						<cite>请选择特效分类</cite>
+						<ul style="display: none;">
+							<li><a href="javascript:;" selectid="1">今日</a></li>
+							<li><a href="javascript:;" selectid="2">昨日</a></li>
+							<li><a href="javascript:;" selectid="3">本周</a></li>
+							<li><a href="javascript:;" selectid="4">上周</a></li>
+							<li><a href="javascript:;" selectid="5">本月</a></li>
+							<li><a href="javascript:;" selectid="6">上月</a></li>
+							<li><a href="javascript:;" selectid="7">本年</a></li>
+							<li><a href="javascript:;" selectid="8">去年</a></li>
+							<li><a href="javascript:;" selectid="9">本季度</a></li>
+							<li><a href="javascript:;" selectid="10">上季度</a></li>
+							<!--<li><a href="javascript:;" selectid="11">下一个季度</a></li>-->
+						</ul>
+					</div>
+					<input name="" type="hidden" value="" id="inputselect" />
+
+				</form>
+
+				</div>
+				
+			</div>
+		</div>
+
+	</body>
+
+</html>

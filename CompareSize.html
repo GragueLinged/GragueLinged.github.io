@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/res/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/manager.css"/>
+		<script src="js/res/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/res/validate/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 比较两个数字的大小
+				jQuery.validator.addMethod("isBiger", function(value, element, param) {
+					value = parseInt(value);
+					var target = $(param).val();
+					return this.optional(element) || value < target;
+				});
+				$("#register_btn").click(function() {
+					if ($("#register_form").valid()) {
+						$("#register_form").submit();
+					}
+				});
+				var validator = $("#register_form").validate({
+					rules: {
+						Price: {
+							required: true,
+							number: true,
+							range: [0, 1000000],
+						},
+						disPrice: {
+							required: true,
+							isBiger: "#Price",
+							number: true,
+							range: [0, 1000000],
+							
+						}
+					},
+					messages: {
+						Price: {
+							required: "价格必填",
+							number: "必须是数字",
+							range: "价格必须>0",
+						},
+						disPrice: {
+							required: "折扣价必填",
+							isBiger: "折扣价应该小于原价",
+							number: "折扣价必须是数字",
+							range: "折扣价价格必须>0",
+							
+						}
+					},
+					errorPlacement: function(error, element) {
+						//						error.appendTo($('#errorPlacement'));
+						if (element.is(":radio")) {
+							error.appendTo(element.next().next());
+						} else if (element.is(":checkbox")) {
+							error.appendTo(element.next());
+						} else {
+							error.appendTo(element.next());
+						}
+					},
+					submitHandler: function(form) {
+						form.submit();
+					},
+					success: function(lable) {
+						lable.html("&nbsp;").addClass("checked");
+					},
+					highlight: function(element, errorClass) {
+						$(element).next().find("." + errorClass).removeClass("checked");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form id="register_form" class="register_form" method="post">
+			<div class="input-g-line">
+				<span class="input-g-title">价格</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="text" id="Price" name="Price" placeholder="请输入价格" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g-line">
+				<span class="input-g-title">折扣价</span>
+				<div class="input-g">
+					<span class="input-g-icon"></span>
+					<input type="text" id="disPrice" name="disPrice" placeholder="请输入折扣价" class="input-g-text">
+					<span class="status"></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="input-g">
+				<a class="btn btn-success" id="register_btn">提交</a>
+			</div>
+			<div class="clear"></div>
+		</form>
+	</body>
+</html>

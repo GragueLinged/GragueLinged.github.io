@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>input和radio样式</title>
+		<style type="text/css">
+			input {
+				border: 1px solid #eee;
+				border-radius: 5px;
+				width: 130px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 1em;
+				text-align: center;
+			}
+			.input_span{
+				display: inline-block;
+				margin-right: 2px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			input[type="radio"] {
+				margin: 3px 10px 0px 5px;
+				display: none;
+			}
+			
+			label {
+				padding-left: 20px;
+				cursor: pointer;
+				background: url(img/radioborder.png) no-repeat left 3px;
+			}
+			
+			label.checked {
+				background: url(img/selectradio.png) no-repeat left 3px;
+			}
+		</style>
+		<script src="js/res/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$('label').click(function() {
+					var radioId = $(this).attr('name');
+					$('label').removeAttr('class') && $(this).attr('class', 'checked');
+					$('input[type="radio"]').removeAttr('checked') && $('#' + radioId).attr('checked', 'checked');
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<span class="input_span">input样式：</span><input type="text" placeholder="input样式" />
+
+		<hr />
+
+		<div>
+			<input type="radio" id="nba" checked="checked" name="sport" value="nba">
+			<label name="nba" class="checked" for="nba">NBA</label>
+			<input type="radio" id="cba" name="sport" value="cba">
+			<label name="cba" for="cba">CBA</label>
+		</div>
+	</body>
+
+</html>
